@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script type='text/javascript' async defer src='https://static.addtoany.com/menu/page.js'
+        id='addtoany-core-js'></script>
+
+</head>
+<style>
+    
+  a.nav-link-style:hover {
+    color: black !important;
+    font-weight: bold;
+  }
+
+  a.nav-link-style.active {
+    color: black !important;
+    font-weight: bold;
+  }
+
+  a.nav-link-style{
+    color: grey;
+
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 100%;
+    font-weight: 300;
+    color: #505050;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100vh;
+
+  }
+
+  /* REUSABLE COMPONENTS */
+  h2 {
+    color: #fff;
+    font-family: 'Playfair Display', Serif;
+    font-size: 180%;
+    font-weight: 300;
+
+  }
+
+  p {
+    color: #fff;
+    line-height: 120%;
+    margin-bottom: 10px;
+  }
+
+ 
+
+  /* MAIN */
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .section-content {
+    background: #fff;
+    border: 1px solid #fff;
+
+    width: 75%;
+    max-width: 500px;
+    margin: 5px auto;
+    padding: 10px 10px;
+  }
+
+  .content-wrapper {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .box {
+    width: 17rem;
+    margin: 10;
+    padding: 10%;
+    border: 1px hidden;
+    position: relative;
+    height: 17rem;
+  }
+
+  .box-1 {
+    background-image: linear-gradient(white) url(https://images.pexels.com/photos/545331/pexels-photo-545331.jpeg?w=940&h=650&auto=compress&cs=tinysrgb);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    border: 1px solid black;
+  }
+
+  .box-2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg?w=940&h=650&auto=compress&cs=tinysrgb) no-repeat center;
+    background-size: cover;
+
+  }
+
+  .first {
+    display: block;
+    position: relative;
+    max-width: 100%;
+  }
+
+  .second {
+    position: relative;
+    max-width: 100%;
+  }
+
+  .box-1 .second {
+    opacity: 0;
+    backface-visibility: hidden;
+  }
+
+  .box-2 .second {
+    opacity: 0;
+    backface-visibility: hidden;
+  }
+
+  .box-1:hover {
+    background-image: linear-gradient(rgba(29, 26, 26, 0.88), rgb(29, 29, 151)), url(https://images.pexels.com/photos/545331/pexels-photo-545331.jpeg?w=940&h=650&auto=compress&cs=tinysrgb);
+    transition: background-image 0.3s;
+
+  }
+
+  .box-1:hover .second {
+    opacity: 1;
+    transition: opacity 0.8s;
+  }
+
+  .box-1:hover .first {
+    opacity: 0;
+  }
+
+
+  /* Media queries */
+  @media screen and (max-width: 500px) {
+    body {
+      height: auto;
+    }
+
+    p {
+      font-size: 90%;
+    }
+  }
+
+  @media screen and (max-height: 500px) {
+    body {
+      height: auto;
+    }
+  }
+   a.link:hover {
+        color: black !important;
+        border-bottom: 3px solid black;
+        font-weight: bold;
+    }
+
+    a.link:active {
+        color: black !important;
+    }
+
+    a.link {
+        color: blue;
+        padding: 30px;
+        font-size: 20px;
+        align-items: center;
+        text-decoration: none;
+        
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        font-family: 'Raleway', sans-serif;
+        font-size: 100%;
+        font-weight: 300;
+        color: #505050;
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
+        width: 100%;
+        height: 100vh;
+
+    }
+
+    /* REUSABLE COMPONENTS */
+    h2 {
+        color: #fff;
+        font-family: 'Playfair Display', Serif;
+        font-size: 180%;
+        font-weight: 300;
+
+    }
+
+    p {
+        color: #fff;
+        line-height: 120%;
+        margin-bottom: 10px;
+    }
+
+
+
+    /* MAIN */
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .section-content {
+        background: #fff;
+        border: 1px solid #fff;
+
+        width: 75%;
+        max-width: 500px;
+        margin: 5px auto;
+        padding: 10px 10px;
+    }
+
+    .content-wrapper {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .box {
+        width: 17rem;
+        margin: 10;
+        padding: 10%;
+        border: 1px hidden;
+        position: relative;
+        height: 17rem;
+    }
+
+    .box-1 {
+        background-image: linear-gradient(white) url(https://images.pexels.com/photos/545331/pexels-photo-545331.jpeg?w=940&h=650&auto=compress&cs=tinysrgb);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        border: 1px solid black;
+    }
+
+    .box-2 {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg?w=940&h=650&auto=compress&cs=tinysrgb) no-repeat center;
+        background-size: cover;
+
+    }
+
+    .first {
+        display: block;
+        position: relative;
+        max-width: 100%;
+    }
+
+    .second {
+        position: relative;
+        max-width: 100%;
+    }
+
+    .box-1 .second {
+        opacity: 0;
+        backface-visibility: hidden;
+    }
+
+    .box-2 .second {
+        opacity: 0;
+        backface-visibility: hidden;
+    }
+
+    .box-1:hover {
+        background-image: linear-gradient(rgba(29, 26, 26, 0.88), rgb(29, 29, 151)), url(https://images.pexels.com/photos/545331/pexels-photo-545331.jpeg?w=940&h=650&auto=compress&cs=tinysrgb);
+        transition: background-image 0.3s;
+
+    }
+
+    .box-1:hover .second {
+        opacity: 1;
+        transition: opacity 0.8s;
+    }
+
+    .box-1:hover .first {
+        opacity: 0;
+    }
+
+
+    /* Media queries */
+    @media screen and (max-width: 500px) {
+        body {
+            height: auto;
+        }
+
+        p {
+            font-size: 90%;
+        }
+    }
+
+    @media screen and (max-height: 500px) {
+        body {
+            height: auto;
+        }
+    }
+    header {
+        /* height:180vh; */
+        min-height: 300px;
+        background-repeat: no-repeat;
+        /* background-size:cover; */
+        background-image: url("https://www.signalpartners.com/wp-content/uploads/2021/05/experience-hero-e1620989766477.jpeg");
+        opacity: 0.2;
+    }
+
+    .hidden-spacer {
+        height: 56px
+    }
+
+    .navbar-styles .navbar-nav .nav-link-styles {
+        font-size: 1.2em;
+        font-weight: medium;
+        padding: 30px;
+
+        color: rgb(252, 251, 251);
+    }
+
+    .navbar-styles .navbar-nav .nav-link-styles:hover {
+        color: white !important;
+
+    }
+
+    .navbar-styles .navbar-nav .nav-item-styles {
+        position: relative;
+    }
+
+    .navbar-styles .navbar-nav .nav-item-styles::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: white;
+        width: 0%;
+        content: "";
+        height: 3px;
+        transition: all 0.3s;
+        font-weight: bold;
+
+    }
+
+    .navbar-styles .navbar-nav .nav-item-styles:hover::after {
+        width: 100%;
+    }
+
+    .bg-color {
+
+        background-color: rgb(1, 1, 19);
+
+    }
+
+    .section-title {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .button {
+        border: none;
+        align-items: center;
+        background-color: white;
+        color: blue;
+        font-size: 20px;
+
+    }
+
+    button:hover {
+        color: black;
+        border-bottom: 2px solid black;
+    }
+    .section-title{
+        padding: 70px;
+        font-size: 40px;
+    }
+</style>
+
+<body>
+    <div class="bg-color ">
+        <header> </header>
+
+        <nav class="navbar navbar-styles navbar-expand-sm fixed-top navbar-white ">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4">
+
+                        <a class="navbar-brand" href="#"> <img
+                                src="https://www.signalpartners.com/wp-content/uploads/2021/05/signal-partners-logo.svg"
+                                alt="Signal Partners" class="logo-img" width="100%" height="100%" /></a>
+                    </div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-5">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1">
+                            <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbar1">
+                            <ul class="navbar-nav">
+                                <li class="nav-item nav-item-styles">
+                                    <strong><a class="nav-link nav-link-styles" href="#">ABOUT</a></strong>
+                                </li>
+                                <li class="nav-item nav-item-styles">
+                                    <strong><a class="nav-link  nav-link-styles active" href="#">EXPERIENCE</a></strong>
+                                </li>
+                                <li class="nav-item nav-item-styles">
+                                    <strong><a class="nav-link nav-link-styles" href="#">NEWS</a></strong>
+                                </li>
+                                <li class="nav-item nav-item-styles">
+                                    <strong><a class="nav-link nav-link-styles" href="#">TEAM</a></strong>
+                                </li>
+                                <li class="nav-item nav-item-styles">
+                                    <strong><a class="nav-link nav-link-styles" href="#">CONDACT</a></strong>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="inner-frame">
+                    <h1>It's All About Results </h1>
+                </div>
+        </nav>
+
+    </div>
+
+    <section class="searches-filter">
+        <div class="inner-frame">
+            <h1 class="section-title">
+                <div>COMPELETED SEARCHES</div>
+            </h1>
+            <div class="container mt-3">
+
+                <ul class="nav" role="tablist">
+                    <li class="item">
+                        <a class="link active" data-bs-toggle="pill" href="#all">All</a>
+                    </li>
+                    <li class="item">
+                        <a class="link" data-bs-toggle="pill" href="#softtware">Software</a>
+                    </li>
+                    <li class="item">
+                        <a class="link" data-bs-toggle="pill" href="#consumer">Consumer</a>
+                    </li>
+                    <li class="item">
+                        <a class="link" data-bs-toggle="pill" href="#financial">Financial</a>
+                    </li>
+                    <li class="item">
+                        <a class="link" data-bs-toggle="pill" href="#services">Services</a>
+                    </li>
+                    <li class="item">
+                        <a class="link" data-bs-toggle="pill" href="#industrial">Industrial</a>
+                    </li>
+                    <li class="item">
+                        <a class="link" data-bs-toggle="pill" href="#healthcare">Healthcare</a>
+                    </li>
+                </ul>
+            
+                <div class="main">
+                    <div class="tab-content">
+                        <div id="all" class="container tab-pane active"><br>
+                            
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="section-content">
+                                        <div class="content-wrapper">
+                                            <div class="box box-1 ">
+                                                <div class="first">
+                                                    <h2><img src="/image/cire.png" width="100%" height="100%"></h2>
+                                                </div>
+                                                <div class="second">
+                                                    <p>Heading</p>
+                                                    <p><a href="#">This is a sub text. I will update soon</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="col-sm-3">
+                                    <div class="section-content">
+                                        <div class="content-wrapper">
+                                            <div class="box box-1 ">
+                                                <div class="first">
+                                                    <h2><img src="/image/eitrade.png" width="100%" height="100%"></h2>
+                                                </div>
+                                                <div class="second">
+                                                    <p>Heading</p>
+                                                    <p><a href="#">This is a sub text. I will update soon</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="col-sm-3">
+                                    <div class="section-content">
+                                        <div class="content-wrapper">
+                                            <div class="box box-1">
+                                                <div class="first">
+                                                    <h2><img src="/image/HSCapitalgroupd_logo.png" width="100%" height="100%"></h2>
+                                                </div>
+                                                <div class="second">
+                                                    <p>Heading</p>
+                                                    <p><a href="#">This is a sub text. I will update soon</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="section-content">
+                                        <div class="content-wrapper">
+                                            <div class="box box-1">
+                                                <div class="first">
+                                                    <h2><img src="/image/kiliner.png" width="100%" height="100%"></h2>
+                                                </div>
+                                                <div class="second">
+                                                    <p>Heading</p>
+                                                    <p><a href="#">This is a sub text. I will update soon</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="section-content">
+                                        <div class="content-wrapper">
+                                            <div class="box box-1 ">
+                                                <div class="first">
+                                                    <h2><img src="/image/prelude.png" width="100%" height="100%"></h2>
+                                                </div>
+                                                <div class="second">
+                                                    <p>Heading</p>
+                                                    <p><a href="#">This is a sub text. I will update soon</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="col-sm-3">
+                                    <div class="section-content">
+                                        <div class="content-wrapper">
+                                            <div class="box box-1 ">
+                                                <div class="first">
+                                                    <h2><img src="/image/recharge.png" width="100%" height="100%"></h2>
+                                                </div>
+                                                <div class="second">
+                                                    <p>Heading</p>
+                                                    <p><a href="#">This is a sub text. I will update soon</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="col-sm-3">
+                                    <div class="section-content">
+                                        <div class="content-wrapper">
+                                            <div class="box box-1">
+                                                <div class="first">
+                                                    <h2><img src="/image/select quote.png" width="100%" height="100%"></h2>
+                                                </div>
+                                                <div class="second">
+                                                    <p>Heading</p>
+                                                    <p><a href="#">This is a sub text. I will update soon</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="section-content">
+                                        <div class="content-wrapper">
+                                            <div class="box box-1">
+                                                <div class="first">
+                                                    <h2><img src="/image/SierraVentures_Logo.png" width="100%" height="100%"></h2>
+                                                </div>
+                                                <div class="second">
+                                                    <p>Heading</p>
+                                                    <p><a href="#">This is a sub text. I will update soon</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="section-content">
+                                        <div class="content-wrapper">
+                                            <div class="box box-1 ">
+                                                <div class="first">
+                                                    <h2><img src="/image/silver_lake.png" width="100%" height="100%"></h2>
+                                                </div>
+                                                <div class="second">
+                                                    <p>Heading</p>
+                                                    <p><a href="#">This is a sub text. I will update soon</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="col-sm-3">
+                                    <div class="section-content">
+                                        <div class="content-wrapper">
+                                            <div class="box box-1 ">
+                                                <div class="first">
+                                                    <h2><img src="/image/summit.png" width="100%" height="100%"></h2>
+                                                </div>
+                                                <div class="second">
+                                                    <p>Heading</p>
+                                                    <p><a href="#">This is a sub text. I will update soon</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="col-sm-3">
+                                    <div class="section-content">
+                                        <div class="content-wrapper">
+                                            <div class="box box-1">
+                                                <div class="first">
+                                                    <h2><img src="/image/tyche.png" width="100%" height="100%"></h2>
+                                                </div>
+                                                <div class="second">
+                                                    <p>Heading</p>
+                                                    <p><a href="#">This is a sub text. I will update soon</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="section-content">
+                                        <div class="content-wrapper">
+                                            <div class="box box-1">
+                                                <div class="first">
+                                                    <h2><img src="/image/wealth.png" width="100%" height="100%"></h2>
+                                                </div>
+                                                <div class="second">
+                                                    <p>Heading</p>
+                                                    <p><a href="#">This is a sub text. I will update soon</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="section-content">
+                                        <div class="content-wrapper">
+                                            <div class="box box-1 ">
+                                                <div class="first">
+                                                    <h2><img src="/image/whitmen.png" width="100%" height="100%"></h2>
+                                                </div>
+                                                <div class="second">
+                                                    <p>Heading</p>
+                                                    <p><a href="#">This is a sub text. I will update soon</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                            </div>
+            
+                        </div>
+            
+                        <div id="software" class="container tab-pane fade"><br>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/kiliner.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/silver_lake.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/whitmen.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/summit.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/recharge.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/cire.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/HSCapitalgroupd_logo.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/tyche.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/SierraVentures_Logo.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/eitrade.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/select quote.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/prelude.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/select quote.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                  
+                          </div>
+            
+                          <div id="consumer" class="container tab-pane fade"><br>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/kiliner.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/silver_lake.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/whitmen.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/summit.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/recharge.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/cire.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/HSCapitalgroupd_logo.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/tyche.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/SierraVentures_Logo.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/eitrade.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/select quote.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/prelude.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/select quote.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                  
+                          </div>
+            
+                          <div id="financial" class="container tab-pane fade"><br>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/kiliner.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/silver_lake.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/whitmen.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/summit.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/recharge.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/cire.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/HSCapitalgroupd_logo.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/tyche.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/SierraVentures_Logo.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/eitrade.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/select quote.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/prelude.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/select quote.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                  
+                          </div>
+            
+                          <div id="services" class="container tab-pane fade"><br>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/kiliner.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/silver_lake.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/whitmen.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/summit.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/recharge.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/cire.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/HSCapitalgroupd_logo.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/tyche.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/SierraVentures_Logo.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/eitrade.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/select quote.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/prelude.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/select quote.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                  
+                          </div>
+            
+                          <div id="industrial" class="container tab-pane fade"><br>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/kiliner.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/silver_lake.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/whitmen.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/summit.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/recharge.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/cire.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/HSCapitalgroupd_logo.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/tyche.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/SierraVentures_Logo.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/eitrade.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/select quote.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/prelude.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/select quote.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                  
+                          </div>
+            
+                          <div id="healthcare" class="container tab-pane fade"><br>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/kiliner.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/silver_lake.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/whitmen.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/summit.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/recharge.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/cire.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/HSCapitalgroupd_logo.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/tyche.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/SierraVentures_Logo.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/eitrade.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/select quote.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1">
+                                      <div class="first">
+                                        <h2><img src="/image/prelude.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <div class="section-content">
+                                  <div class="content-wrapper">
+                                    <div class="box box-1 ">
+                                      <div class="first">
+                                        <h2><img src="/image/select quote.png" width="100%" height="100%"></h2>
+                                      </div>
+                                      <div class="second">
+                                        <p>Heading</p>
+                                        <p><a href="#">This is a sub text. I will update soon</a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                  
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
